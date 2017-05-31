@@ -6,10 +6,15 @@
 # Datatypes (KEYWORD1)
 ##################################################################
 
-@@@	KEYWORD1
+ClosedCube_Si7034	KEYWORD1
 
 ##################################################################
 # Methods and Functions (KEYWORD2)
 ##################################################################
 
-test 	KEYWORD2
+begin	KEYWORD2
+readFirmwareRevision	KEYWORD2
+queryDevice		KEYWORD2
+readSerialNumber	KEYWORD2
+fastMeasurement		KEYWORD2
+normalMeasurement	KEYWORD2
