@@ -5,7 +5,7 @@ ClosedCube Si7034 Digital I2C Humidity and Temperature Sensor with ADP150 Ultral
 This is breakout board for [SiLabs Si7034](http://www.silabs.com/products/sensors/humidity) Digital I2C Humidity and Temperature Sensor
 
 
-[![](https://github.com/closedcube/ClosedCube_Si7034_Arduino/blob/master/images/B012_SI7034_Image1.jpg)](https://www.tindie.com/stores/closedcube/)
+[![](http://images.closedcube.uk/B012_SI7034/ClosedCube_B012_SI7034_GitHub_Pic1.jpg)](https://www.tindie.com/stores/closedcube/)
 
 
 
