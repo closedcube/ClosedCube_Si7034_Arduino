@@ -33,7 +33,7 @@ void setup()
 void loop()
 {
 	printResult("[F]", si7034.fastMeasurement());
-	printResult("[N]", si7034.fastMeasurement());
+	printResult("[N]", si7034.normalMeasurement());
 	
 	delay(250);
 }
