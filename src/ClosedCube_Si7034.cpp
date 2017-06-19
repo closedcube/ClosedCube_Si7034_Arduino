@@ -24,6 +24,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+
 THE SOFTWARE.
 
 */
@@ -43,6 +44,37 @@ Si7034_Result ClosedCube_Si7034::fastMeasurement() {
 
 Si7034_Result ClosedCube_Si7034::normalMeasurement() {
 	return noHoldModeMeasurement(0x7866);
+}
+
+Si7034_Heater ClosedCube_Si7034::readHeater() {
+	Wire.requestFrom(_address, (uint8_t)1);
+	
+	Si7034_Heater heater;
+	if (Wire.available() == 1 )
+		heater.rawData = (uint8_t)Wire.read();
+
+	return heater;
+}
+
+void ClosedCube_Si7034::heatOn() {
+	Wire.beginTransmission(_address);
+
+	Si7034_Heater heater;
+	heater.OnChipHeaterEnable = 1;
+
+	Wire.write(0xE6);
+	Wire.write(heater.rawData);
+	Wire.endTransmission();
+}
+
+void ClosedCube_Si7034::heatOff() {
+	Si7034_Heater heater;
+	heater.OnChipHeaterEnable = 0;
+
+	Wire.beginTransmission(_address);
+	Wire.write(0xE6);
+	Wire.write(heater.rawData);
+	Wire.endTransmission();
 }
 
 Si7034_Result ClosedCube_Si7034::noHoldModeMeasurement(uint16_t hexCode) {
