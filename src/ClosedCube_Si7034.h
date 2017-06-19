@@ -1,3 +1,4 @@
+
 /*
 
 Arduino library for Silabs Si7034 Digital I2C Humidity and Temperature Sensor
@@ -61,7 +62,10 @@ class ClosedCube_Si7034
 
 	Si7034_Result fastMeasurement();
 	Si7034_Result normalMeasurement();
-
+	
+	Si7034_Heater readHeater();
+	void heatOn();
+	void heatOff();
  private:
 	 uint8_t _address;
 	 
